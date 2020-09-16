@@ -29,6 +29,7 @@
 		<div class="dropdown-button">
 			<span mx-2>Usuário Mock</span>
 			<i class="icofont-simple-down ml-2"></i>
+		</div><!--dropdown-button-->
 			<div class="dropdown-content">
 				<ul class="nav-list">
 					<li class="nav-item">
@@ -39,7 +40,7 @@
 					</li>
 				</ul>
 			</div><!--dropdown-content-->
-		</div><!--dropdown-button-->	
+			
 		
 	</div><!--dropdown-->
 </header>

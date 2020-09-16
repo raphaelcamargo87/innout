@@ -91,6 +91,7 @@ header.header .dropdown-content ul {
 }
 
 header.header .dropdown-content a {
+	display: flex;
 	color: #222;
 	text-decoration: none;
 	align-items: center;
