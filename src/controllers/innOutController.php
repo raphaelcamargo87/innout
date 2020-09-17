@@ -3,16 +3,22 @@
 	session_start();
 	requireValidSession();
 
-	loadModel("WorkingHours");
-
 	$user = $_SESSION['user'];
 	$records = WorkingHours::loadFromUserAndDate($user->id, date('Y-m-d'));
 
-	$currentTime = strftime("%H:%M:%S", time());
+	try{
+
+		$currentTime = strftime("%H:%M:%S", time());
+		if(isset($_POST['forcedTime'])){
+			$currentTime = $_POST['forcedTime'];
+		}
+		$records->innout($currentTime);
+		addSuccessMsg("Registro realizado com sucesso.");
+	}catch (AppException $e){
+		addErrorMsg($e->getMessage());
+	}
 	
-	$records->innout($currentTime);
 	header("Location: dayRecordsController.php");
-	
 
 
 ?>

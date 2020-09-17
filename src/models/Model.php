@@ -49,6 +49,7 @@
 				. static::getFilters($filters);
 			$result = Database::getResultFromQuery($sql);
 			if($result->num_rows === 0){
+				
 				return null;
 			} else {
 				return $result;
@@ -87,7 +88,12 @@
 			if(count($filters) > 0){
 				$sql .= " WHERE 1 = 1";
 				foreach($filters as $column => $value){
-					$sql .= " AND ${column} = " . static::getFormatedValues($value);
+					if($column == 'raw'){
+						$sql .= " AND {$value}";
+
+					}else {						
+						$sql .= " AND ${column} = " . static::getFormatedValues($value);
+					}
 				}
 			}
 			return $sql;

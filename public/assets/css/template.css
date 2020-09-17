@@ -158,7 +158,7 @@ aside.sidebar .sidebar-widgets {
 aside.sidebar .sidebar-widget {
 	display: flex;
 	align-items: center;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
 aside.sidebar .sidebar-widget .icon {
