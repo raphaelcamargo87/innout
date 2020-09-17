@@ -37,7 +37,15 @@
 			<div class="info">
 				<span class="main text-primary">04:23</span>
 				<span class="label text-muted">Horas Trabalhadas</span>
-			</div>
-		</div>
-	</div>
+			</div><!--info-->
+		</div><!--sidebar-widget-->
+		<div class="division my-3"></div>
+		<div class="sidebar-widget">
+			<i class="icon icofont-ui-alarm text-danger"></i>
+			<div class="info">
+				<span class="main text-danger">18:00</span>
+				<span class="label text-muted">Hora de Saída</span>
+			</div><!--info-->
+		</div><!--sidebar-widget-->
+	</div><!--sidebar-widgets-->
 </aside><!--sidebar-->
