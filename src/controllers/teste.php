@@ -2,7 +2,7 @@
 
 //Controller temporário
 
-print_r(getLastDayOfMonth('2020-02-04'));
+echo User::getCount(['id' => 1]);
 
 
 ?>

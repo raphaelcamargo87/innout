@@ -1,5 +1,5 @@
 <?php
-	Database::executeSQL('DELETE FROM working_hours');
+	// Database::executeSQL('DELETE FROM working_hours');
 	// Database::executeSQL('DELETE FROM users WHERE id > 5');
 
 	function getDayTemplateByOdds($regularRate, $extraRate, $lazyRate){
@@ -54,9 +54,9 @@
 		}
 	}
 
-	populateWorkingHours(1, date('Y-08-1'), 70, 20, 10);
-	populateWorkingHours(3, date('Y-08-1'), 20, 75, 5);
-	populateWorkingHours(4, date('Y-08-1'), 20, 10, 70);
+	// populateWorkingHours(1, date('2019-05-29'), 70, 20, 10);
+	// populateWorkingHours(3, date('2019-07-10'), 20, 75, 5);
+	// populateWorkingHours(4, date('2019-06-26'), 20, 10, 70);
 
 	echo "Tudo certo";
 

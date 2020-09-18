@@ -1,7 +1,7 @@
 <?php
 
 	date_default_timezone_set('America/Sao_Paulo');
-	setLocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
+	setLocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
 
 	// Constantes Gerais 
 
