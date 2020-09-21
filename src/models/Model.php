@@ -5,15 +5,23 @@
 		protected static $columns = [];
 		protected $values = [];
 
-		function __construct($arr){
-			$this->loadFromArray($arr);
+		function __construct($arr, $sanitize = true){
+			$this->loadFromArray($arr, $sanitize = true);
 		}
 
-		public function loadFromArray($arr){
+		public function loadFromArray($arr, $sanitize = true){
 			if($arr){
+				// $conn = Database::getConnection();
 				foreach($arr as $key => $value){
-					$this->$key = $value;
+					$cleanValue = $value;
+					if($sanitize && isset($cleanValue)){
+						$cleanValue = strip_tags(trim($cleanValue));
+						$cleanValue = htmlentities($cleanValue, ENT_NOQUOTES);
+						// $cleanValue = mysqli_real_escape_string($conn, $cleanValue);
+					}				
+					$this->$key = $cleanValue;
 				}
+				// $conn->close();
 			}
 		}
 
@@ -23,6 +31,10 @@
 
 		public function __set($key, $value){
 			$this->values[$key] = $value;
+		}
+
+		public function getValues(){
+			return $this->values;
 		}
 
 		public function get($filters = [], $columns = '*'){
@@ -84,8 +96,14 @@
 		}
 
 		public static function getCount($filters = []){
-			$result = static::getResultSetFromSelect($filters, 'count(*) as count');
+			$result = static::getResultSetFromSelect(
+				$filters, 'count(*) as count');
 			return $result->fetch_assoc()['count'];
+		}
+
+		public static function deleteById($id){
+			$sql = "DELETE FROM ". static::$tableName . " WHERE id = {$id}";
+			Database::executeSQL($sql);
 		}
 
 		private static function getFilters($filters) {

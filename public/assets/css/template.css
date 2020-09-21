@@ -236,3 +236,38 @@ footer.footer {
 
 }
 
+.summary-boxes {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.summary-box {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	align-items: center;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	color: white;
+	min-width: 200px;
+}
+
+.summary-box .icon {
+	font-size: 3.5rem;
+}
+
+.summary-box .title {
+	font-size: 1.5rem;
+}
+
+.summary-box .value {
+	font-size: 2.0rem;
+}
+
+.small-icon {
+	color: white;
+	font-size: 1.1rem;
+}
+

@@ -15,6 +15,7 @@
 					</i>
 				</a>
 			</li><!--nav-item-->
+			<?php if($user->is_admin): ?>
 			<li class="nav-item">
 				<a href="managerReportController.php">
 					<i class="icofont-chart-histogram mr-2">
@@ -23,12 +24,13 @@
 				</a>
 			</li><!--nav-item-->
 			<li class="nav-item">
-				<a href="">
+				<a href="usersController.php">
 					<i class="icofont-users mr-2">
 						Usuários
 					</i>
 				</a>
 			</li><!--nav-item-->
+			<?php endif ?>
 		</ul><!--nav-list-->
 	</nav><!--menu-->
 	<div class="sidebar-widgets">
